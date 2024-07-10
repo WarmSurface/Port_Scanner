@@ -1,28 +1,11 @@
 import socket
 
-print("""
-      
-
-                            ______
-                           /      \         
-                          /  P  O  \       
-                          |   \/   |     
-                           \ r--T /     
-                            \____/    
-                            |    |
-                      --___/      \____--  
-                    /-/                 \-\ 
-                   -----------  ------------
-                   ################_________  <- Loading...  
-      """)
-
-
-spy = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server = input("Enter Target IP Addr: ")
 
 def pscan(port):
     try:
-        spy.connect((server,port))
+        s.connect((server,port))
         return True
     except:
         return False
